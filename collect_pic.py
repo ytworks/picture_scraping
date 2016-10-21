@@ -11,7 +11,7 @@ import time
 def main(page, scroll = 100, s = 1):
     browser = webdriver.Chrome()
     browser.get(page)
-    for i in range(100):
+    for i in range(scroll):
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(s)
         print i, "scrolling done"
