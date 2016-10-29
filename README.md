@@ -1,6 +1,6 @@
 # picture_scraping
-google 画像検索から画像をスクレイピングするスクリプトです
-seleniumを使っているので以下でseleniumをインストールして使ってください
+* google 画像検索から画像をスクレイピングするスクリプトです
+* seleniumを使っているので以下でseleniumをインストールして使ってください
 
 ```
 $ brew update
