@@ -8,11 +8,17 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
 
-def main(page, scroll = 100, s = 0.4):
+def main(page, scroll = 100, s = 0.6):
     browser = webdriver.Chrome()
     browser.get(page)
     for i in range(scroll):
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        element = browser.find_element_by_xpath('//input[@class="ksb _kvc"]')
+        print element
+        try:
+            element.click()
+        except:
+            pass
         time.sleep(s)
         print i, "scrolling done"
 
@@ -27,6 +33,7 @@ def main(page, scroll = 100, s = 0.4):
                 with open(output,'wb') as f:
                     raw = requests.get(img_url).content
                     f.write(raw)
+                    time.sleep(s)
                 download_count += 1
 
     browser.close()
@@ -41,4 +48,4 @@ if __name__ == '__main__':
     else:
         page = "https://www.google.co.jp/search?tbm=isch&q="
         page += p[1]
-        main(page = page, scroll = 1000)
+        main(page = page, scroll = 100)
