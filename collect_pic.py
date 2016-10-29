@@ -28,7 +28,7 @@ def main(page, scroll = 100, s = 0.6):
         if img.get_attribute('src') != None:
             if img.get_attribute('src').find('gstatic.com/images?q=tbn:') > 0:
                 img_url = img.get_attribute('src')
-                output = '%s/%03d.jpg' % (save_path,download_count)
+                output = '%s/%05d.jpg' % (save_path,download_count)
                 print('%s : Download... %s' % (download_count, os.path.basename(img_url)))
                 with open(output,'wb') as f:
                     raw = requests.get(img_url).content
