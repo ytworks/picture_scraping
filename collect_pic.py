@@ -33,5 +33,12 @@ def main(page, scroll = 100, s = 1):
 
 
 if __name__ == '__main__':
-    page = "https://www.google.co.jp/search?q=%E3%82%A4%E3%83%B3%E3%83%91%E3%83%8D&espv=2&biw=1110&bih=536&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjs-L-2-OjPAhUp9IMKHVppCLUQ_AUIBigB#imgrc=_"
-    main(page = page, scroll = 1000)
+    import sys
+    p = sys.argv
+    if len(p) == 1:
+        page = "https://www.google.co.jp/search?q=%E3%82%A4%E3%83%B3%E3%83%91%E3%83%8D&espv=2&biw=1110&bih=536&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjs-L-2-OjPAhUp9IMKHVppCLUQ_AUIBigB#imgrc=_"
+        main(page = page, scroll = 1000)
+    else:
+        page = "https://www.google.co.jp/search?tbm=isch&q="
+        page += p[1]
+        main(page = page, scroll = 1000)
